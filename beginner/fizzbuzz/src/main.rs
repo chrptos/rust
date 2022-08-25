@@ -14,14 +14,27 @@
 //     }
 // }
 
+// fn fizzbuzz(end: i32) {
+//     let mut r: = 1..=end;
+//     while x in r {
+//         match x % 15 {
+//             0 => println!("FizzBuzz"),
+//             3 | 6 | 9 | 12 => println!("Fizz"),
+//             5 | 10 => println!("Buzz"),
+//             _ => println("{}", x),
+//         }
+//     }
+// }
+
 fn fizzbuzz(end: i32) {
-    let mut r: = 1..=end;
-    while x in r {
-        match x % 15 {
-            0 => println!("FizzBuzz"),
-            3 | 6 | 9 | 12 => println!("Fizz"),
-            5 | 10 => println!("Buzz"),
-            _ => println("{}", x),
+    let r: RangeInclusive<i32> = 1..=end;
+
+    for x: i32 in r {
+        match (x % 3, x % 5) {
+            (0, 0) => println!("FizzBuzz"),
+            (0, _) => println!("Fizz"),
+            (_, 0) => println!("Buzz"),
+            _ => println!("{}", x),
         }
     }
 }
