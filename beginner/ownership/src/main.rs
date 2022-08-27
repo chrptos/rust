@@ -22,4 +22,30 @@ fn main() {
 
     // v1を参照したい場合は。。。もちろん所有権の移動前に行う必要がある
     // let v2 = v1.clone();
+
+    let s1: String = String::from("Hello");
+    let s2: String = String::from("Rust");
+    let s: String = concat(s1, s2);
+    println!("{}", s);
+    // 関数で使用されたためs1,s2は使用できない
+    // println!("{}", s1);
+    // println!("{}", s2);
+
+    // タプルで関数で使用した変数をまとめて返してあげれば再度使用できる
+    let t1: String = String::from("t1");
+    let t2: String = String::from("t2");
+    let (t, t1, t2) = concat2(t1, t2);
+    println!("{}", t);
+    println!("{}", t1);
+    println!("{}", t2);
+}
+
+fn concat(a: String, b: String) -> String {
+    let c: String = format!("{} {}", a, b);
+    c
+}
+
+fn concat2(a: String, b: String) -> (String, String, String) {
+    let c: String = format!("{} {}", a, b);
+    (c, a, b)
 }
