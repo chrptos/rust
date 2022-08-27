@@ -1,18 +1,27 @@
-fn fizzbuzz(end: i32) {
-    let mut x: i32 = 1;
-    while x <= end {
-        if x % 3 == 0 && x % 5 == 0 {
-            println!("FizzBuzz");
-        } else if x % 3 == 0 {
-            println!("Fizz");
-        } else if x % 5 == 0 {
-            println!("Buzz");
-        } else {
-            println!("{}", x);
-        }
-        x += 1;
-    }
+fn main() {
+    // fizzbuzz(30);
+    let mut v1: Vec<i32> = vec![1, 2, 3];
+    println!("v1 pointer: {:?}", v1.as_ptr());
+    println!("v1 len: {:?}", v1.len());
+    println!("v1 capacity: {:?}", v1.capacity());
+    println!("v1 [0]: {:?}", &v1[0]);
 }
+
+// fn fizzbuzz(end: i32) {
+//     let mut x: i32 = 1;
+//     while x <= end {
+//         if x % 3 == 0 && x % 5 == 0 {
+//             println!("FizzBuzz");
+//         } else if x % 3 == 0 {
+//             println!("Fizz");
+//         } else if x % 5 == 0 {
+//             println!("Buzz");
+//         } else {
+//             println!("{}", x);
+//         }
+//         x += 1;
+//     }
+// }
 
 // fn fizzbuzz(end: i32) {
 //     let mut r: = 1..=end;
@@ -36,7 +45,3 @@ fn fizzbuzz(end: i32) {
 //         }
 //     }
 // }
-
-fn main() {
-    fizzbuzz(30);
-}
